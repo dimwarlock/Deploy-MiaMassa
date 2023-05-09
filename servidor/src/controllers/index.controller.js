@@ -1,6 +1,6 @@
 //Base de datos
 const express = require('express');
-const app = require('../app');
+const app = require('../index');
 const { db, admin } = require('../firebase');
 
 //Añadir las funciones al Controlador para que se puedan invocar en Rutas
