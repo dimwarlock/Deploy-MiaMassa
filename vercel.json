@@ -1,16 +1,8 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "cliente/package.json",
-      "use": "@vercel/node",
-      "config": { "port": 8000, "start": "npm start" }
-    },
-    {
-      "src": "servidor/package.json",
-      "use": "@vercel/node",
-      "config": { "port": 3000, "start": "node src/app.js" }
-    }
+    { "src": "cliente/package.json", "use": "@vercel/node" },
+    { "src": "servidor/package.json", "use": "@vercel/node" }
   ],
   "routes": [
     { "src": "/cliente/(.*)", "dest": "cliente/src/$1" },
