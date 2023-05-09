@@ -2,7 +2,7 @@ import React from 'react'
 import {
   BrowserRouter as Router,
   Routes,
-  RouterProvider as Route,
+  Route,
   Link
 } from "react-router-dom";
 import FrontPage from './pages/FrontPage'
