@@ -9,10 +9,7 @@
     {
       "src": "servidor/package.json",
       "use": "@vercel/node",
-      "config": { "start": "node src/app.js" },
-      "env": {
-        "PORT": 3000
-      }
+      "config": { "port": 3000, "start": "node src/app.js" }
     }
   ],
   "routes": [
