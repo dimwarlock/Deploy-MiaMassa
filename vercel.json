@@ -1,8 +1,8 @@
 {
   "version": 2,
   "builds": [
-    { "src": "cliente/package.json", "use": "@vercel/node" },
-    { "src": "servidor/package.json", "use": "@vercel/node" }
+    { "src": "cliente/package.json", "use": "@vercel/node", "config": { "start": "npm start" } },
+    { "src": "servidor/package.json", "use": "@vercel/node", "config": { "start": "node src/app" } }
   ],
   "routes": [
     { "src": "/cliente/(.*)", "dest": "cliente/$1" },
