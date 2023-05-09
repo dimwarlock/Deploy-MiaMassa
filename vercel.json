@@ -1,38 +1,12 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "cliente/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "cliente/build",
-        "base": "/cliente"
-      }
-    },
-    {
-      "src": "servidor/package.json",
-      "use": "@vercel/node",
-      "config": {
-        "maxLambdaSize": "50mb"
-      }
-    }
+    { "src": "cliente/package.json", "use": "@vercel/node" },
+    { "src": "servidor/package.json", "use": "@vercel/node" }
   ],
   "routes": [
-    {
-      "src": "/cliente/.*",
-      "dest": "/cliente/src/index.js",
-      "headers": {
-        "cache-control": "public, max-age=0, must-revalidate"
-      },
-      "continue": true
-    },
-    {
-      "src": "/cliente/(.*)",
-      "dest": "/cliente/$1"
-    },
-    {
-      "src": "/api/(.*)",
-      "dest": "/servidor/src/app.js"
-    }
+    { "src": "/cliente/(.*)", "dest": "cliente/$1" },
+    { "src": "/servidor/(.*)", "dest": "servidor/$1" },
+    { "src": "/(.*)", "dest": "servidor/$1" }
   ]
 }
