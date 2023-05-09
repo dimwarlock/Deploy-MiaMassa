@@ -2,7 +2,7 @@ import React from 'react'
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
+  RouterProvider as Route,
   Link
 } from "react-router-dom";
 import FrontPage from './pages/FrontPage'
@@ -12,7 +12,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <RouterProvider Component={FrontPage} />
+        <Route Component={FrontPage} />
         <Route exact path="/administrador" Component={Administrador} />
       </Routes>
     </Router>
