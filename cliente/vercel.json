@@ -6,14 +6,14 @@
       "use": "@vercel/static-build",
       "config": {
         "distDir": "build",
-        "buildCommand": "npm run build"
+        "buildCommand": "set CI=false && npm run build"
       }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "/src/index.js"
     }
   ]
 }
